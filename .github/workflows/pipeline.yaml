@@ -12,7 +12,11 @@ jobs:
     name: Release Pipeline
     runs-on: windows-latest
     steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
       - name: test
-        run: echo "Hello, World!"
+        run: dotnet test .\src\DevOpsDaysTasks.Core.Tests 
+
 
    
