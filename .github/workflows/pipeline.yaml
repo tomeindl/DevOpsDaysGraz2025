@@ -26,6 +26,8 @@ jobs:
       - name: build
         run: |
           dotnet publish -c Release src\DevOpsDaysTasks.UI\ -o DevOpsDaysTasks /p:Version=1.0.0 /p:VersionName=TrashCan
+          mkdir DevOpsDaysTasks\Templates
           cp workshop_material\default-tasks.xml DevOpsDaysTasks\Templates\
+          mkdir DevOpsDaysTasks\Help
           cp workshop_material\Help.pdf DevOpsDaysTasks\Help\
-          
+
