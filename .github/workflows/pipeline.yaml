@@ -23,5 +23,9 @@ jobs:
       - name: test
         run: dotnet test .\src\DevOpsDaysTasks.Core.Tests 
 
-
-   
+      - name: build
+        run: |
+          dotnet publish -c Release src\DevOpsDaysTasks.UI\ -o DevOpsDaysTasks /p:Version=1.0.0 /p:VersionName=TrashCan
+          cp workshop_material\default-tasks.xml DevOpsDaysTasks\Templates\
+          cp workshop_material\Help.pdf DevOpsDaysTasks\Help\
+          
